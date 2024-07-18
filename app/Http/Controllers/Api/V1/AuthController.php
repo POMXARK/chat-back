@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\RegisterUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Knuckles\Scribe\Attributes\BodyParam;
@@ -27,7 +28,7 @@ class AuthController extends Controller
         $token = $user->createToken('apiToken')->plainTextToken;
 
         return response([
-            'user' => $user,
+            'user' => new UserResource($user),
             'token' => $token
         ], Response::HTTP_CREATED);
     }
@@ -45,7 +46,7 @@ class AuthController extends Controller
         $token = $user->createToken('apiToken')->plainTextToken;
 
         return response([
-            'user' => $user,
+            'user' => new UserResource($user),
             'token' => $token
         ], Response::HTTP_CREATED);
     }

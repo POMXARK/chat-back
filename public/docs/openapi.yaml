@@ -47,15 +47,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: deserunt
+                  example: nihil
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ewyman@example.net
+                  example: fgreenholt@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'z!S;0"zlVvs0WX/#-]TQ'
+                  example: 'Vi^"LLzQqSK=y'
                 password_confirmation:
                   type: string
                   description: ''
@@ -85,11 +85,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: olabadie@example.net
+                  example: marlene38@example.org
                 password:
                   type: string
                   description: ''
-                  example: '0?+:mFsU~7S?@7[&;'
+                  example: vmPpOvy\
               required:
                 - email
                 - password

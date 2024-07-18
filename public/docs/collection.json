@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c927227d-d1d4-45bf-a933-1097e6be20d9",
+        "_postman_id": "92cd6cff-9811-4e19-927c-2af42c20de20",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -52,10 +52,6 @@
                                 {
                                     "key": "content-type",
                                     "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
                                 }
                             ],
                             "code": 401,
@@ -86,7 +82,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"deserunt\",\"email\":\"ewyman@example.net\",\"password\":\"z!S;0\\\"zlVvs0WX\\\/#-]TQ\",\"password_confirmation\":null}"
+                            "raw": "{\"name\":\"nihil\",\"email\":\"fgreenholt@example.net\",\"password\":\"Vi^\\\"LLzQqSK=y\",\"password_confirmation\":null}"
                         },
                         "description": "",
                         "auth": {
@@ -117,7 +113,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"olabadie@example.net\",\"password\":\"0?+:mFsU~7S?@7[&;\"}"
+                            "raw": "{\"email\":\"marlene38@example.org\",\"password\":\"vmPpOvy\\\\\"}"
                         },
                         "description": "",
                         "auth": {
