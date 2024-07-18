@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "5b8868a8-f884-4f84-b692-6252a674bd07",
+        "_postman_id": "0af16128-ec8c-454c-bbce-0329cb2186bb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -82,7 +82,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"ad\",\"last_name\":\"unde\",\"email\":\"geovanny83@example.net\",\"password\":\"vVQJ'.L`m1'>S~S\\\/\\\/y\",\"password_confirmation\":null}"
+                            "raw": "{\"first_name\":\"doloribus\",\"last_name\":\"atque\",\"email\":\"ron.weber@example.com\",\"password\":\"-C'}u2'$M=,G&9>\",\"password_confirmation\":null}"
                         },
                         "description": "",
                         "auth": {
@@ -113,7 +113,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ishields@example.org\",\"password\":\"2nZiAkBvn1M8a\\\"0rGtp\"}"
+                            "raw": "{\"email\":\"itillman@example.org\",\"password\":\"kMFbdlN<#>2'dzTg|1\"}"
                         },
                         "description": "",
                         "auth": {
@@ -121,6 +121,54 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "GET api\/users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/users?page=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }

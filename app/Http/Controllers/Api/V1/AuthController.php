@@ -29,7 +29,7 @@ class AuthController extends Controller
         $token = $user->createToken('apiToken')->plainTextToken;
 
         return response([
-            'user' => new UserResource($user),
+            'user' => UserResource::make($user),
             'token' => $token
         ], Response::HTTP_CREATED);
     }
@@ -47,7 +47,7 @@ class AuthController extends Controller
         $token = $user->createToken('apiToken')->plainTextToken;
 
         return response([
-            'user' => new UserResource($user),
+            'user' => UserResource::make($user),
             'token' => $token
         ], Response::HTTP_CREATED);
     }

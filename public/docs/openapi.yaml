@@ -47,19 +47,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: ad
+                  example: doloribus
                 last_name:
                   type: string
                   description: ''
-                  example: unde
+                  example: atque
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: geovanny83@example.net
+                  example: ron.weber@example.com
                 password:
                   type: string
                   description: ''
-                  example: "vVQJ'.L`m1'>S~S//y"
+                  example: "-C'}u2'$M=,G&9>"
                 password_confirmation:
                   type: string
                   description: ''
@@ -90,15 +90,46 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ishields@example.org
+                  example: itillman@example.org
                 password:
                   type: string
                   description: ''
-                  example: '2nZiAkBvn1M8a"0rGtp'
+                  example: "kMFbdlN<#>2'dzTg|1"
               required:
                 - email
                 - password
       security: []
+  /api/users:
+    get:
+      summary: ''
+      operationId: getApiUsers
+      description: ''
+      parameters:
+        -
+          in: query
+          name: page
+          description: ''
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: ''
+            example: 1
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
 tags:
   -
     name: Endpoints

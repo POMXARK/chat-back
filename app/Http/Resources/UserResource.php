@@ -15,12 +15,10 @@ class UserResource extends JsonResource
     {
         /** @var User $this */
         return [
-            'id' => $this->id,
+            'userId' => $this->id,
             'firstName' => $this->first_name,
             'lastName' => $this->last_name,
             'email' => $this->email,
-            'createdAt' => $this->created_at,
-            'updatedAt' => $this->updated_at,
         ];
     }
 }
