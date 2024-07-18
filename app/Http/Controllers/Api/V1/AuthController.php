@@ -15,7 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 class AuthController extends Controller
 {
     #[BodyParam("password_confirmation", "string", example: 'No-example')]
-    public function register(RegisterUserRequest $data) {
+    public function register(RegisterUserRequest $data)
+    {
 
         $user = User::query()->create([
             'name' => $data['name'],
