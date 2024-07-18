@@ -269,9 +269,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"nihil\",
-    \"email\": \"fgreenholt@example.net\",
-    \"password\": \"Vi^\\\"LLzQqSK=y\",
+    \"first_name\": \"ad\",
+    \"last_name\": \"unde\",
+    \"email\": \"geovanny83@example.net\",
+    \"password\": \"vVQJ\'.L`m1\'&gt;S~S\\/\\/y\",
     \"password_confirmation\": null
 }"
 </code></pre></div>
@@ -288,9 +289,10 @@ const headers = {
 };
 
 let body = {
-    "name": "nihil",
-    "email": "fgreenholt@example.net",
-    "password": "Vi^\"LLzQqSK=y",
+    "first_name": "ad",
+    "last_name": "unde",
+    "email": "geovanny83@example.net",
+    "password": "vVQJ'.L`m1'&gt;S~S\/\/y",
     "password_confirmation": null
 };
 
@@ -375,15 +377,26 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-register"
-               value="nihil"
+                              name="first_name"                data-endpoint="POSTapi-register"
+               value="ad"
                data-component="body">
     <br>
-<p>Example: <code>nihil</code></p>
+<p>Example: <code>ad</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="POSTapi-register"
+               value="unde"
+               data-component="body">
+    <br>
+<p>Example: <code>unde</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -391,10 +404,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="fgreenholt@example.net"
+               value="geovanny83@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>fgreenholt@example.net</code></p>
+<p>Must be a valid email address. Example: <code>geovanny83@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -402,10 +415,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="Vi^"LLzQqSK=y"
+               value="vVQJ'.L`m1'>S~S//y"
                data-component="body">
     <br>
-<p>Example: <code>Vi^"LLzQqSK=y</code></p>
+<p>Example: <code>vVQJ'.L</code>m1'&gt;S~S//y`</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -437,8 +450,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"marlene38@example.org\",
-    \"password\": \"vmPpOvy\\\\\"
+    \"email\": \"ishields@example.org\",
+    \"password\": \"2nZiAkBvn1M8a\\\"0rGtp\"
 }"
 </code></pre></div>
 
@@ -454,8 +467,8 @@ const headers = {
 };
 
 let body = {
-    "email": "marlene38@example.org",
-    "password": "vmPpOvy\\"
+    "email": "ishields@example.org",
+    "password": "2nZiAkBvn1M8a\"0rGtp"
 };
 
 fetch(url, {
@@ -544,10 +557,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="marlene38@example.org"
+               value="ishields@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>marlene38@example.org</code></p>
+<p>Must be a valid email address. Example: <code>ishields@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -555,10 +568,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="vmPpOvy\"
+               value="2nZiAkBvn1M8a"0rGtp"
                data-component="body">
     <br>
-<p>Example: <code>vmPpOvy\</code></p>
+<p>Example: <code>2nZiAkBvn1M8a"0rGtp</code></p>
         </div>
         </form>
 

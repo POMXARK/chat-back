@@ -44,24 +44,29 @@ paths:
             schema:
               type: object
               properties:
-                name:
+                first_name:
                   type: string
                   description: ''
-                  example: nihil
+                  example: ad
+                last_name:
+                  type: string
+                  description: ''
+                  example: unde
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: fgreenholt@example.net
+                  example: geovanny83@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'Vi^"LLzQqSK=y'
+                  example: "vVQJ'.L`m1'>S~S//y"
                 password_confirmation:
                   type: string
                   description: ''
                   example: null
               required:
-                - name
+                - first_name
+                - last_name
                 - email
                 - password
                 - password_confirmation
@@ -85,11 +90,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: marlene38@example.org
+                  example: ishields@example.org
                 password:
                   type: string
                   description: ''
-                  example: vmPpOvy\
+                  example: '2nZiAkBvn1M8a"0rGtp'
               required:
                 - email
                 - password
