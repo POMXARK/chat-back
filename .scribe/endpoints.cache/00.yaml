@@ -34,13 +34,17 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          access-control-allow-origin: 'http://127.0.0.1:5174'
+          access-control-allow-methods: 'POST, GET, OPTIONS, PUT, DELETE'
+          access-control-allow-headers: 'Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization'
+          access-control-allow-credentials: 'true'
         description: null
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P6aghDvbZa531VkEc648def'
+      - 'Bearer D1g6k5aZ6ach38v4VeEbPfd'
     controller: null
     method: null
     route: null
@@ -48,7 +52,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/register
+    uri: api/v1/register
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -70,7 +74,7 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: doloribus
+        example: expedita
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +83,7 @@ endpoints:
         name: last_name
         description: ''
         required: true
-        example: atque
+        example: facere
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +92,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: ron.weber@example.com
+        example: heidenreich.jermaine@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,7 +101,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "-C'}u2'$M=,G&9>"
+        example: 'FrVu_2ub#S*.zq-xV'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -112,10 +116,10 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: doloribus
-      last_name: atque
-      email: ron.weber@example.com
-      password: "-C'}u2'$M=,G&9>"
+      first_name: expedita
+      last_name: facere
+      email: heidenreich.jermaine@example.org
+      password: 'FrVu_2ub#S*.zq-xV'
       password_confirmation: null
     fileParameters: []
     responses: []
@@ -128,7 +132,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/login
+    uri: api/v1/login
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -150,7 +154,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: itillman@example.org
+        example: griffin75@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -159,14 +163,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "kMFbdlN<#>2'dzTg|1"
+        example: "mZ8_2DDCz'W"
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: itillman@example.org
-      password: "kMFbdlN<#>2'dzTg|1"
+      email: griffin75@example.net
+      password: "mZ8_2DDCz'W"
     fileParameters: []
     responses: []
     responseFields: []
@@ -178,7 +182,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/users
+    uri: api/v1/users
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -216,13 +220,144 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          access-control-allow-origin: 'http://127.0.0.1:5174'
+          access-control-allow-methods: 'POST, GET, OPTIONS, PUT, DELETE'
+          access-control-allow-headers: 'Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization'
+          access-control-allow-credentials: 'true'
         description: null
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer aakEb6hgfP4d31Zev5V8D6c'
+      - 'Bearer cDeE5Pa68v316Va4gbhkfdZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/messages
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"user_id":133,"text":"test","created_at":"2024-07-19T15:13:23.000000Z","updated_at":"2024-07-19T15:13:23.000000Z","time":"19 Jul 2024, 15:13:23","user":{"id":133,"first_name":"voluptatum","last_name":"sed","email":"forest92@example.org","email_verified_at":null,"created_at":"2024-07-19T11:00:48.000000Z","updated_at":"2024-07-19T11:00:48.000000Z"}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'http://127.0.0.1:5174'
+          access-control-allow-methods: 'POST, GET, OPTIONS, PUT, DELETE'
+          access-control-allow-headers: 'Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3EvkV6D5hZa6egfdP184bac'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/message
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer dh4Ef1abZg63ePaV56kcD8v'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+      - POST
+    uri: api/broadcasting/auth
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Authenticate the request for channel access.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'http://127.0.0.1:5174'
+          access-control-allow-methods: 'POST, GET, OPTIONS, PUT, DELETE'
+          access-control-allow-headers: 'Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 58PZ6D4hge1d3a6EakVcbfv'
     controller: null
     method: null
     route: null

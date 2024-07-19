@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "http:\/\/127.0.0.1:80"
         }
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "0af16128-ec8c-454c-bbce-0329cb2186bb",
+        "_postman_id": "1b5b6137-ec08-4d74-833c-9cab4a368198",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -52,6 +52,22 @@
                                 {
                                     "key": "content-type",
                                     "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "http:\/\/127.0.0.1:5174"
+                                },
+                                {
+                                    "key": "access-control-allow-methods",
+                                    "value": "POST, GET, OPTIONS, PUT, DELETE"
+                                },
+                                {
+                                    "key": "access-control-allow-headers",
+                                    "value": "Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
                                 }
                             ],
                             "code": 401,
@@ -61,13 +77,13 @@
                     ]
                 },
                 {
-                    "name": "POST api\/register",
+                    "name": "POST api\/v1\/register",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/register",
+                            "path": "api\/v1\/register",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/register"
+                            "raw": "{{baseUrl}}\/api\/v1\/register"
                         },
                         "method": "POST",
                         "header": [
@@ -82,7 +98,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"doloribus\",\"last_name\":\"atque\",\"email\":\"ron.weber@example.com\",\"password\":\"-C'}u2'$M=,G&9>\",\"password_confirmation\":null}"
+                            "raw": "{\"first_name\":\"expedita\",\"last_name\":\"facere\",\"email\":\"heidenreich.jermaine@example.org\",\"password\":\"FrVu_2ub#S*.zq-xV\",\"password_confirmation\":null}"
                         },
                         "description": "",
                         "auth": {
@@ -92,13 +108,13 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/login",
+                    "name": "POST api\/v1\/login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/login",
+                            "path": "api\/v1\/login",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/login"
+                            "raw": "{{baseUrl}}\/api\/v1\/login"
                         },
                         "method": "POST",
                         "header": [
@@ -113,7 +129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"itillman@example.org\",\"password\":\"kMFbdlN<#>2'dzTg|1\"}"
+                            "raw": "{\"email\":\"griffin75@example.net\",\"password\":\"mZ8_2DDCz'W\"}"
                         },
                         "description": "",
                         "auth": {
@@ -123,11 +139,11 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/users",
+                    "name": "GET api\/v1\/users",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/users",
+                            "path": "api\/v1\/users",
                             "query": [
                                 {
                                     "key": "page",
@@ -136,7 +152,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/users?page=1"
+                            "raw": "{{baseUrl}}\/api\/v1\/users?page=1"
                         },
                         "method": "GET",
                         "header": [
@@ -162,6 +178,161 @@
                                 {
                                     "key": "content-type",
                                     "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "http:\/\/127.0.0.1:5174"
+                                },
+                                {
+                                    "key": "access-control-allow-methods",
+                                    "value": "POST, GET, OPTIONS, PUT, DELETE"
+                                },
+                                {
+                                    "key": "access-control-allow-headers",
+                                    "value": "Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/messages",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/messages",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/messages"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "http:\/\/127.0.0.1:5174"
+                                },
+                                {
+                                    "key": "access-control-allow-methods",
+                                    "value": "POST, GET, OPTIONS, PUT, DELETE"
+                                },
+                                {
+                                    "key": "access-control-allow-headers",
+                                    "value": "Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":1,\"user_id\":133,\"text\":\"test\",\"created_at\":\"2024-07-19T15:13:23.000000Z\",\"updated_at\":\"2024-07-19T15:13:23.000000Z\",\"time\":\"19 Jul 2024, 15:13:23\",\"user\":{\"id\":133,\"first_name\":\"voluptatum\",\"last_name\":\"sed\",\"email\":\"forest92@example.org\",\"email_verified_at\":null,\"created_at\":\"2024-07-19T11:00:48.000000Z\",\"updated_at\":\"2024-07-19T11:00:48.000000Z\"}}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/message",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/message",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/message"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Authenticate the request for channel access.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/broadcasting\/auth",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/broadcasting\/auth"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "http:\/\/127.0.0.1:5174"
+                                },
+                                {
+                                    "key": "access-control-allow-methods",
+                                    "value": "POST, GET, OPTIONS, PUT, DELETE"
+                                },
+                                {
+                                    "key": "access-control-allow-headers",
+                                    "value": "Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
                                 }
                             ],
                             "code": 401,
