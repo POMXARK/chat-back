@@ -21,12 +21,15 @@ class SendMessage implements ShouldQueue
 
     public function handle(): void
     {
-        /** @var SendMessage $this */
-        GotMessage::dispatch([
-            'id' => $this->message->id,
-            'user_id' => $this->message->user_id,
-            'text' => $this->message->text,
-            'time' => $this->message->time,
-        ]);
+        if ($this->message->chat_id) {
+            /** @var SendMessage $this */
+            GotMessage::dispatch([
+                'id' => $this->message->id,
+                'user_id' => $this->message->user_id,
+                'chat_id' => $this->message->chat_id,
+                'text' => $this->message->text,
+                'time' => $this->message->time,
+            ]);
+        }
     }
 }

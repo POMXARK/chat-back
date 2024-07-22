@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D1g6k5aZ6ach38v4VeEbPfd'
+      - 'Bearer h664aZVcDk1abg538fevdPE'
     controller: null
     method: null
     route: null
@@ -72,7 +72,7 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: expedita
+        example: deleniti
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -81,7 +81,7 @@ endpoints:
         name: last_name
         description: ''
         required: true
-        example: facere
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: heidenreich.jermaine@example.org
+        example: pagac.jayce@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'FrVu_2ub#S*.zq-xV'
+        example: '`j@#BP#'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -114,10 +114,10 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first_name: expedita
-      last_name: facere
-      email: heidenreich.jermaine@example.org
-      password: 'FrVu_2ub#S*.zq-xV'
+      first_name: deleniti
+      last_name: repudiandae
+      email: pagac.jayce@example.net
+      password: '`j@#BP#'
       password_confirmation: null
     fileParameters: []
     responses: []
@@ -152,7 +152,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: griffin75@example.net
+        example: ytremblay@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -161,14 +161,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "mZ8_2DDCz'W"
+        example: 'jVe<uWD{6SwIpK4?Jfj'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: griffin75@example.net
-      password: "mZ8_2DDCz'W"
+      email: ytremblay@example.com
+      password: 'jVe<uWD{6SwIpK4?Jfj'
     fileParameters: []
     responses: []
     responseFields: []
@@ -228,7 +228,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cDeE5Pa68v316Va4gbhkfdZ'
+      - 'Bearer 3VacDd5bf84kh1Pg66EvZae'
     controller: null
     method: null
     route: null
@@ -236,7 +236,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/messages
+    uri: 'api/v1/messages/{chat_id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -250,8 +250,18 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      chat_id:
+        name: chat_id
+        description: 'The ID of the chat.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      chat_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -259,8 +269,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '[{"id":1,"user_id":133,"text":"test","created_at":"2024-07-19T15:13:23.000000Z","updated_at":"2024-07-19T15:13:23.000000Z","time":"19 Jul 2024, 15:13:23","user":{"id":133,"first_name":"voluptatum","last_name":"sed","email":"forest92@example.org","email_verified_at":null,"created_at":"2024-07-19T11:00:48.000000Z","updated_at":"2024-07-19T11:00:48.000000Z"}}]'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -274,7 +284,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3EvkV6D5hZa6egfdP184bac'
+      - 'Bearer aZVgekc64E1h63DvadP85bf'
     controller: null
     method: null
     route: null
@@ -282,7 +292,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/message
+    uri: 'api/v1/message/{chat_id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -296,8 +306,18 @@ endpoints:
       Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      chat_id:
+        name: chat_id
+        description: 'The ID of the chat.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      chat_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -308,7 +328,117 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dh4Ef1abZg63ePaV56kcD8v'
+      - 'Bearer Ef8P36dvhekV5a1gacZ6b4D'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/chats
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'http://127.0.0.1:5174'
+          access-control-allow-methods: 'POST, GET, OPTIONS, PUT, DELETE'
+          access-control-allow-headers: 'Content-Type, X-Requested-With, X-Auth-Token, Origin, Authorization'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer eZ58hgDEbv61adV34k6acfP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/chats
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      fromUser:
+        name: fromUser
+        description: ''
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      forUser:
+        name: forUser
+        description: ''
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      fromUser: 10
+      forUser: 6
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ZcEve8fPg6bVh5dkaaD6341'
     controller: null
     method: null
     route: null
@@ -355,7 +485,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 58PZ6D4hge1d3a6EakVcbfv'
+      - 'Bearer 66d3kvaEcZ1Dh5Vga4fPe8b'
     controller: null
     method: null
     route: null

@@ -47,19 +47,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: expedita
+                  example: deleniti
                 last_name:
                   type: string
                   description: ''
-                  example: facere
+                  example: repudiandae
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: heidenreich.jermaine@example.org
+                  example: pagac.jayce@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'FrVu_2ub#S*.zq-xV'
+                  example: '`j@#BP#'
                 password_confirmation:
                   type: string
                   description: ''
@@ -90,11 +90,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: griffin75@example.net
+                  example: ytremblay@example.com
                 password:
                   type: string
                   description: ''
-                  example: "mZ8_2DDCz'W"
+                  example: 'jVe<uWD{6SwIpK4?Jfj'
               required:
                 - email
                 - password
@@ -130,45 +130,110 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
-  /api/v1/messages:
+  '/api/v1/messages/{chat_id}':
     get:
       summary: ''
-      operationId: getApiV1Messages
+      operationId: getApiV1MessagesChat_id
       description: ''
       parameters: []
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
+                type: object
                 example:
-                  -
-                    id: 1
-                    user_id: 133
-                    text: test
-                    created_at: '2024-07-19T15:13:23.000000Z'
-                    updated_at: '2024-07-19T15:13:23.000000Z'
-                    time: '19 Jul 2024, 15:13:23'
-                    user:
-                      id: 133
-                      first_name: voluptatum
-                      last_name: sed
-                      email: forest92@example.org
-                      email_verified_at: null
-                      created_at: '2024-07-19T11:00:48.000000Z'
-                      updated_at: '2024-07-19T11:00:48.000000Z'
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Endpoints
-  /api/v1/message:
+    parameters:
+      -
+        in: path
+        name: chat_id
+        description: 'The ID of the chat.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/message/{chat_id}':
     post:
       summary: ''
-      operationId: postApiV1Message
+      operationId: postApiV1MessageChat_id
       description: ''
       parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: chat_id
+        description: 'The ID of the chat.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/chats:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters:
+        -
+          in: query
+          name: page
+          description: ''
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: ''
+            example: 1
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters:
+        -
+          in: query
+          name: fromUser
+          description: ''
+          example: 10
+          required: true
+          schema:
+            type: integer
+            description: ''
+            example: 10
+        -
+          in: query
+          name: forUser
+          description: ''
+          example: 6
+          required: true
+          schema:
+            type: integer
+            description: ''
+            example: 6
       responses: {  }
       tags:
         - Endpoints

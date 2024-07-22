@@ -17,11 +17,8 @@ class GotMessage implements ShouldBroadcast
         //
     }
 
-    public function broadcastOn(): array
+    public function broadcastOn(): PrivateChannel
     {
-        // $this->message is available here
-        return [
-            new PrivateChannel("channel_for_everyone"),
-        ];
+        return new PrivateChannel('notification.' . $this->message['chat_id']);
     }
 }
