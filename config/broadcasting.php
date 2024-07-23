@@ -77,6 +77,10 @@ return [
             'driver' => 'null',
         ],
 
+//        GENL/laravel-broadcast-testing
+        'test' => [
+            'driver' => 'test'
+        ],
     ],
 
 ];

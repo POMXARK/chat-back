@@ -2,7 +2,8 @@
 
 namespace App\Jobs;
 
-use App\Events\GotMessage;
+use App\DTO\MessageDTO;
+use App\Events\MessageEvent;
 use App\Models\Message;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -23,13 +24,13 @@ class SendMessage implements ShouldQueue
     {
         if ($this->message->chat_id) {
             /** @var SendMessage $this */
-            GotMessage::dispatch([
-                'id' => $this->message->id,
-                'user_id' => $this->message->user_id,
-                'chat_id' => $this->message->chat_id,
-                'text' => $this->message->text,
-                'time' => $this->message->time,
-            ]);
+            MessageEvent::dispatch((new MessageDTO(
+                id: $this->message->id,
+                userId: $this->message->user_id,
+                chatId: $this->message->chat_id,
+                text: $this->message->text,
+                time: $this->message->time,
+            ))->toArray());
         }
     }
 }

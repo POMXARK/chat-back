@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\RegisterUserRequest;
 use App\Http\Resources\UserResource;
@@ -49,6 +48,6 @@ class AuthController extends Controller
         return response([
             'user' => UserResource::make($user),
             'token' => $token
-        ], Response::HTTP_CREATED);
+        ], Response::HTTP_OK);
     }
 }

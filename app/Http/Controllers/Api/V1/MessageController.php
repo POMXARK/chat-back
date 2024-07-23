@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MessageCollection;
-use App\Http\Resources\UserResource;
 use App\Jobs\SendMessage;
 use App\Models\Chat;
 use App\Models\ChatUsers;
 use App\Models\Message;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Knuckles\Scribe\Attributes\QueryParam;
@@ -18,17 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
 class MessageController extends Controller
 {
     const COUNT_MESSAGES = 20;
-
-    public function index()
-    {
-        $user = User::query()->where('id', auth()->id())->select([
-            'id', 'first_name', 'email',
-        ])->first();
-
-        return response([
-            'user' => UserResource::make($user),
-        ]);
-    }
 
     #[QueryParam("page", "int", required: false, example: 1)]
     public function messages(Chat $chat): JsonResponse

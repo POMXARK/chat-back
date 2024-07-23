@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a7b9fe2246b1ff8645ee8e6311d283c",
+    "content-hash": "0272ae4ffa229694e1b61ab739ac977b",
     "packages": [
         {
             "name": "brick/math",
@@ -7403,6 +7403,67 @@
             "time": "2024-06-16T14:17:03+00:00"
         },
         {
+            "name": "genl/laravel-broadcast-testing",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GENL/laravel-broadcast-testing.git",
+                "reference": "0cb85e181d469d76a53b18d52bea481abb688475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GENL/laravel-broadcast-testing/zipball/0cb85e181d469d76a53b18d52bea481abb688475",
+                "reference": "0cb85e181d469d76a53b18d52bea481abb688475",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=6.0@dev"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.10||^5.0||^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Genl\\BroadcastTesting\\TestBroadcasterServiceProvider"
+                    ],
+                    "aliases": {
+                        "BroadcastTesting": "Genl\\BroadcastTesting\\TestBroadcasterFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Genl\\BroadcastTesting\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ekcel Henrich Ekoumelong",
+                    "email": "bigcodole@gmail.com",
+                    "homepage": "https://ekcel-portofolio.firebaseapp.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A broadcast provider for testing event broadcasting",
+            "homepage": "https://github.com/GENL/laravel-broadcast-testing/",
+            "keywords": [
+                "Broadcasting",
+                "events",
+                "laravel",
+                "testing"
+            ],
+            "support": {
+                "source": "https://github.com/GENL/laravel-broadcast-testing/tree/1.0.3"
+            },
+            "time": "2020-12-04T21:28:51+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "v2.0.1",
             "source": {
@@ -10099,6 +10160,67 @@
                 }
             ],
             "time": "2024-05-31T14:57:53+00:00"
+        },
+        {
+            "name": "thedoctor0/laravel-factory-generator",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TheDoctor0/laravel-factory-generator.git",
+                "reference": "fed9260ab27522e3630bc379a14786b1880fa76d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TheDoctor0/laravel-factory-generator/zipball/fed9260ab27522e3630bc379a14786b1880fa76d",
+                "reference": "fed9260ab27522e3630bc379a14786b1880fa76d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.0|^11.0",
+                "illuminate/filesystem": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TheDoctor0\\LaravelFactoryGenerator\\FactoryGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TheDoctor0\\LaravelFactoryGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Automatically generate Laravel factories for your models.",
+            "keywords": [
+                "factories",
+                "factory",
+                "generator",
+                "laravel",
+                "tests"
+            ],
+            "support": {
+                "issues": "https://github.com/TheDoctor0/laravel-factory-generator/issues",
+                "source": "https://github.com/TheDoctor0/laravel-factory-generator/tree/1.4.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/thedoctor0",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/thedoctor0",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-14T06:51:07+00:00"
         },
         {
             "name": "theseer/tokenizer",

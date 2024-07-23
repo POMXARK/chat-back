@@ -30,8 +30,7 @@ class ChatUserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    #[QueryParam("fromUser", "int")]
-    #[QueryParam("forUser", "int")]
+    #[QueryParam("user_id", "int")]
     public function store(StoreUserRequest $request)
     {
         $chatUsers = ChatUsers::query()
