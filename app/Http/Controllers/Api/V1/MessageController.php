@@ -3,47 +3,35 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MessageCollection;
-use App\Jobs\SendMessage;
+use App\Http\Requests\StoreMessageRequest;
 use App\Models\Chat;
-use App\Models\ChatUsers;
-use App\Models\Message;
+use App\UseCases\Message\MessageCommandCreate;
+use App\UseCases\Message\MessageCommandGetAll;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Knuckles\Scribe\Attributes\QueryParam;
-use Symfony\Component\HttpFoundation\Response;
+use Tests\Feature\Http\Api\V1\MessageControllerTest;
 
+/**
+ * Контроллер сообщений.
+ *
+ * @see MessageControllerTest
+ */
 class MessageController extends Controller
 {
-    const COUNT_MESSAGES = 20;
-
+    /**
+     * Получить все сообщения из чатов авторизованного пользователя постранично.
+     */
     #[QueryParam("page", "int", required: false, example: 1)]
-    public function messages(Chat $chat): JsonResponse
+    public function index(Chat $chat, MessageCommandGetAll $commandGetAll): JsonResponse
     {
-        $messages = Message::query()->with('user')->withWhereHas('chat.users', function ($query) use ($chat) {
-            $query->where('chat_id', $chat->id);
-            $query->where('user_id', auth()->user()->id);
-        })->orderByDesc('created_at')->paginate(self::COUNT_MESSAGES);
-
-        return response()->json((MessageCollection::make($messages)));
+        return response()->json($commandGetAll->handle($chat));
     }
 
-    public function message(Chat $chat, Request $request): JsonResponse
+    /**
+     * Создать сообщение и отправить событие.
+     */
+    public function store(Chat $chat, StoreMessageRequest $request, MessageCommandCreate $messageCommandCreate): JsonResponse
     {
-        if (ChatUsers::query()->where('chat_id', $chat->id)->where('user_id', auth()->user()->id)->get()) {
-            $message = Message::query()->create([
-                'user_id' => auth()->user()->id,
-                'text' => $request->get('text'),
-                'chat_id' => $chat->id,
-            ]);
-            SendMessage::dispatch($message);
-
-            return response()->json([
-                'success' => true,
-                'message' => "Message created and job dispatched.",
-            ]);
-        }
-
-        return response(status: Response::HTTP_FORBIDDEN)->json();
+        return response()->json($messageCommandCreate->handle($chat, $request->validated()));
     }
 }

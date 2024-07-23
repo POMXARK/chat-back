@@ -4,50 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\RegisterUserRequest;
-use App\Http\Resources\UserResource;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\UseCases\Auth\AuthCommandSignIn;
+use App\UseCases\Auth\AuthCommandSignUp;
+use Illuminate\Http\JsonResponse;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Unauthenticated;
-use Symfony\Component\HttpFoundation\Response;
+use Tests\Feature\Http\AuthControllerTest;
 
+/**
+ * @see AuthControllerTest
+ */
 #[Unauthenticated]
 class AuthController extends Controller
 {
+    /**
+     * Регистрация пользователя.
+     */
     #[BodyParam("password_confirmation", "string", example: 'No-example')]
-    public function register(RegisterUserRequest $data)
+    public function register(RegisterUserRequest $request, AuthCommandSignUp $commandSignUp): JsonResponse
     {
-
-        $user = User::query()->create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password'])
-        ]);
-
-        $token = $user->createToken('apiToken')->plainTextToken;
-
-        return response([
-            'user' => UserResource::make($user),
-            'token' => $token
-        ], Response::HTTP_CREATED);
+        return response()->json(...$commandSignUp->handle($request->validated()));
     }
 
-    public function login(LoginUserRequest $data)
+    /**
+     * Авторизация пользователя.
+     */
+    public function login(LoginUserRequest $request, AuthCommandSignIn $commandSignIn): JsonResponse
     {
-        $user = User::query()->where('email', $data['email'])->first();
-
-        if (!$user || !Hash::check($data['password'], $user->password)) {
-            return response([
-                'msg' => 'incorrect username or password'
-            ], Response::HTTP_UNAUTHORIZED);
-        }
-
-        $token = $user->createToken('apiToken')->plainTextToken;
-
-        return response([
-            'user' => UserResource::make($user),
-            'token' => $token
-        ], Response::HTTP_OK);
+        return response()->json(...$commandSignIn->handle($request->validated()));
     }
 }

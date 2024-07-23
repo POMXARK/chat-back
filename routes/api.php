@@ -18,8 +18,8 @@ Route::prefix('/v1')->group(function () {
 
     Route::middleware('auth:sanctum')->name('api.v1.')->group(function () {
         Route::get('/users', [UserController::class, 'index'])->name('users');
-        Route::get('/messages/{chat}', [MessageController::class, 'messages'])->name('messages');
-        Route::post('/message/{chat}', [MessageController::class, 'message'])->name('message');
+        Route::get('/messages/{chat}', [MessageController::class, 'index'])->name('messages');
+        Route::post('/message/{chat}', [MessageController::class, 'store'])->name('message');
 
         Route::prefix('/chats')->group(function () {
             Route::get('/', [ChatUserController::class, 'index'])->name('chat-user.index');

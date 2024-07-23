@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
-use App\Models\User;
+use App\UseCases\User\UserCommandGetAll;
+use Illuminate\Http\JsonResponse;
 use Knuckles\Scribe\Attributes\QueryParam;
-use Symfony\Component\HttpFoundation\Response;
+use Tests\Feature\Http\Api\V1\UserControllerTest;
 
+/**
+ * Контроллер пользователей.
+ *
+ * @see UserControllerTest
+ */
 class UserController extends Controller
 {
-    const COUNT_USERS = 20;
-
+    /**
+     * Получить всех пользователей постранично.
+     */
     #[QueryParam("page", "int", required: false, example: 1)]
-    public function index()
+    public function index(UserCommandGetAll $commandGetAll): JsonResponse
     {
-        return response([
-            'users' => UserResource::collection(
-                User::query()
-                    ->select(['id', 'email', 'last_name', 'first_name'])
-                    ->paginate(self::COUNT_USERS)
-            ),
-           ], Response::HTTP_OK);
+        return response()->json(...$commandGetAll->handle());
     }
 }
